@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 })
 
 const server = http.createServer(app);
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 
 const io = socketIO(server);
 

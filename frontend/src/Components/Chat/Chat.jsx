@@ -7,7 +7,7 @@ import Message from "../Message/Message";
 import ReactScrollToBottom from "react-scroll-to-bottom";
 import closeIcon from "../../assets/closeIcon.png"
 
-const endpoint = "http://localhost:8000";
+const endpoint = "https://e-chat-hazel.vercel.app/";
 
 function Chat() {
   const location = useLocation();
