@@ -5,9 +5,9 @@ import "./Chat.css";
 import send from "../../assets/send.png";
 import Message from "../Message/Message";
 import ReactScrollToBottom from "react-scroll-to-bottom";
-import closeIcon from "../../assets/closeIcon.png"
+import closeIcon from "../../assets/closeIcon.png";
 
-const endpoint = "https://e-chat-hazel.vercel.app/";
+const endpoint = "https://echat-1.onrender.com/";
 
 function Chat() {
   const location = useLocation();
@@ -53,7 +53,9 @@ function Chat() {
       <div className="chatContainer">
         <div className="header">
           <h2>ECHAT</h2>
-          <a href="/"><img src={closeIcon} alt="closeIcon" /></a>
+          <a href="/">
+            <img src={closeIcon} alt="closeIcon" />
+          </a>
         </div>
         <ReactScrollToBottom className="chatBox">
           {messages.map((item, idx) => {
@@ -62,7 +64,7 @@ function Chat() {
                 <Message key={idx} msg={item.msg} side={"right"} user={"You"} />
               );
             else {
-              const options = item.id === 'Admin';
+              const options = item.id === "Admin";
               return (
                 <Message
                   key={idx}
@@ -79,7 +81,7 @@ function Chat() {
             type="text"
             id="chatInput"
             value={text}
-            onKeyDown={(evt) => evt.key === 'Enter' ? sendText() : null}
+            onKeyDown={(evt) => (evt.key === "Enter" ? sendText() : null)}
             onChange={(evt) => setText(evt.target.value)}
           />
           <button onClick={sendText} className="sendBtn">
